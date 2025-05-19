@@ -1,0 +1,14 @@
+{% extends "wagtailadmin/base.html" %}
+{% block content %}
+    <h1>Publicar en Twitter</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <select name="account">
+            {% for account in accounts %}
+                <option value="{{ account.id }}">{{ account.name }}</option>
+            {% endfor %}
+        </select>
+        <textarea name="message" placeholder="Mensaje"></textarea>
+        <button type="submit">Publicar</button>
+    </form>
+{% endblock %}
