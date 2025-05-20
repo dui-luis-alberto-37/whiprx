@@ -1,0 +1,35 @@
+{% extends "base.html" %}  <!-- Extiende tu template base (si tienes uno) -->
+{% block content %}
+    <h1>Publicar Tweet de Prueba</h1>
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+    <form method="POST">
+        {% csrf_token %}
+        
+        <!-- Si usas múltiples cuentas -->
+        {% if accounts %}
+            <div>
+                <label for="account">Seleccionar cuenta:</label>
+                <select name="account" id="account">
+                    {% for account in accounts %}
+                        <option value="{{ account.id }}">{{ account.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        {% endif %}
+        
+        <div>
+            <label for="message">Mensaje:</label>
+            <textarea name="message" id="message" rows="4" cols="50" maxlength="280" required></textarea>
+        </div>
+        
+        <button type="submit">Publicar Tweet</button>
+    </form>
+{% endblock %}
