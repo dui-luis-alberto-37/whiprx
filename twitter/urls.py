@@ -1,5 +1,7 @@
 from django.urls import path, re_path
-#from twitter_publisher.views import Api_View
+from twitter.views import MyView
 
-#urlpatterns = [
-#   re_path(r'^(?P<code>[^/]+)/api/$', Api_View.as_view())]
+urlpatterns = [
+#    re_path(r'^(?P<code>[^/]+)/api/$', Api_View.as_view()),
+    path("mine/", MyView.as_view(), name="my-view"),
+]
