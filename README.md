@@ -1,6 +1,6 @@
 # WhisprX
 
-This is a [Wagtail](https://wagtail.org poject), intended to post in X using audios and transciptingthem to text to be published.
+This is a [Wagtail](https://wagtail.org) poject, intended to post in X using audios and transciptingthem to text to be published.
 
 You can access to this project with https://whisprx.licc.dev for testing, or https://whisprx.licc.unam.mx for production.
 
